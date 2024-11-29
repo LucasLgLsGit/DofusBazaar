@@ -1,17 +1,26 @@
 // src/components/CreateType.js
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
-function CreateType({ fetchEchanges, types }) {
+function CreateType({ fetchEchanges, types , echanges}) {
     const [num, setNum] = useState('');
     const [type, setType] = useState('');
     const [prix_achat, setPrixAchat] = useState('');
     const [prix_estime, setPrixEstime] = useState('');
 
+    useEffect(() => {
+        if(echanges.length > 0) {
+            const maxNum = echanges.length;
+            setNum(maxNum + 1);
+        } else {
+            setNum(1);
+        }
+    }, [echanges])
+
     const handleSubmit = async (e) => {
         e.preventDefault();
 
         const newEchange = {
-			num: parseInt(num, 10), // Conversion en entier
+			num, // Conversion en entier
 			type,
 			prix_achat: parseFloat(prix_achat), // Conversion en nombre décimal
 			prix_estime: parseFloat(prix_estime) // Conversion en nombre décimal
@@ -28,7 +37,6 @@ function CreateType({ fetchEchanges, types }) {
             });
 
             if (response.ok) {
-                setNum('');
                 setType('');
                 setPrixAchat('');
                 setPrixEstime('');
@@ -43,13 +51,6 @@ function CreateType({ fetchEchanges, types }) {
 
     return (
         <form onSubmit={handleSubmit}>
-            <input
-                type="number"
-                placeholder="Num"
-                value={num}
-                onChange={(e) => setNum(e.target.value)}
-                required
-            />
             <select
                 value={type}
                 onChange={(e) => setType(e.target.value)}

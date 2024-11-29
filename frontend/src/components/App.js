@@ -49,7 +49,7 @@ function App() {
 			<TypeList types={types} />
 			<CreateType fetchTypes={fetchTypes} />
 			<EchangeList  echanges={echanges} />
-			<CreateEchange fetchEchanges={fetchEchanges} types={types} />
+			<CreateEchange fetchEchanges={fetchEchanges} types={types} echanges={echanges} />
 		</div>
 	);
 }
