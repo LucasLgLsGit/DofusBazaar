@@ -7,15 +7,15 @@ exports.createEchange = async (req, res) => {
   const { num, type, prix_achat, prix_estime } = req.body;
 
   try {
-    // Vérifier que le type existe
-    const typeExist = await Type.findOne({name: type});
+    // Vérifier que le type existe en utilisant l'ID du type
+    const typeExist = await Type.findById(type); // Chercher par l'ID
     if (!typeExist) {
       return res.status(400).json({ error: 'Type invalide ou non trouvé.' });
     }
 
     const echange = new Echange({
       num,
-      type: typeExist.id,
+      type: typeExist.id, // Utiliser l'ID du type existant
       prix_achat,
       prix_estime
     });
@@ -25,7 +25,7 @@ exports.createEchange = async (req, res) => {
     // Populate qui affiche le String plutôt que l'id généré par mongoose
     const echangePopulated = await Echange.findById(echange._id).populate('type');
 
-    res.status(201).json({ message: 'Echange créé avec succès !', echange });
+    res.status(201).json({ message: 'Echange créé avec succès !', echange: echangePopulated });
   } catch (error) {
     console.error('Erreur création échange:', error);
     res.status(500).json({ error: 'Erreur serveur.' });

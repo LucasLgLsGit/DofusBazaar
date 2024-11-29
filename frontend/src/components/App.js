@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import CreateType from './CreateType';
 import CreateEchange from './CreateEchange';
 import TypeList from './TypeList';
+import EchangeList from './EchangeList';
 import Banner from './Banner';
 
 
@@ -32,7 +33,7 @@ function App() {
 		try {
 			const response = await fetch('http://localhost:5000/api/echanges');
 			const data = await response.json();
-			setTypes(data);
+			setEchanges(data);
 		} catch (error) {
 			console.error('Erreur lors de la récupération des échanges :', error);
 		}
@@ -45,9 +46,10 @@ function App() {
 				<img src={logo} alt='logo-dofus-bazaar' className='dbr-logo' />
 				<h1 className='dbr-title'>DofusBazaar</h1>
 			</Banner>
-			<CreateType fetchTypes={fetchTypes} />
 			<TypeList types={types} />
-			<CreateEchange fetchEchanges={fetchEchanges} types={types}/>
+			<CreateType fetchTypes={fetchTypes} />
+			<EchangeList  echanges={echanges} />
+			<CreateEchange fetchEchanges={fetchEchanges} types={types} />
 		</div>
 	);
 }
