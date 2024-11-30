@@ -32,6 +32,47 @@ exports.createEchange = async (req, res) => {
   }
 };
 
+exports.modifyEchange = async (req, res) => {
+  try {
+    const echangeId = req.params.id; // On récupère l'ID de l'échange depuis l'URL
+    const echangeObject = req.file 
+      ? { ...JSON.parse(req.body.Echange) } 
+      : { ...req.body };
+
+    const updatedEchange = await Echange.findByIdAndUpdate(
+      echangeId, 
+      { ...echangeObject, _id: echangeId }, 
+      { new: true } // Retourne l'objet mis à jour
+    );
+
+    if (!updatedEchange) {
+      return res.status(404).json({ message: "Echange non trouvé" });
+    }
+
+    res.status(200).json({ message: "Echange modifié avec succès !" });
+  } catch (error) {
+    res.status(500).json({ error: "Erreur serveur lors de la modification." });
+  }
+};
+
+exports.deleteEchange = async (req, res) => {
+  try {
+    const id = req.params.id; // Récupère l'ID de l'échange depuis l'URL
+    const deletedEchange = await Echange.findByIdAndDelete(id);
+
+    if (!deletedEchange) {
+      console.log(`Echange avec l'ID ${id} non trouvé.`);
+      return res.status(404).json({ message: "Echange non trouvé" });
+    }
+
+    console.log(`Echange supprimé: ${id}`);
+    res.status(200).json({ message: "Echange supprimé avec succès !" });
+  } catch (error) {
+    console.error("Erreur lors de la suppression de l'échange:", error); // Log l'erreur complète
+    res.status(500).json({ error: "Erreur serveur lors de la suppression." });
+  }
+};
+
 // Récupérer tous les échanges (optionnel)
 exports.getEchanges = async (req, res) => {
   try {

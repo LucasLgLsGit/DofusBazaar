@@ -15,18 +15,18 @@ function App() {
 	const [echanges, setEchanges] = useState([]);
 
 	useEffect(() => {
-	  fetchTypes();
-	  fetchEchanges();
+		fetchTypes();
+		fetchEchanges();
 	}, []);
   
 	const fetchTypes = async () => {
-	  try {
-		const response = await fetch('http://localhost:5000/api/types');
-		const data = await response.json();
-		setTypes(data);
-	  } catch (error) {
-		console.error('Erreur lors de la récupération des types:', error);
-	  }
+		try {
+			const response = await fetch('http://localhost:5000/api/types');
+			const data = await response.json();
+			setTypes(data);
+	  	} catch (error) {
+			console.error('Erreur lors de la récupération des types:', error);
+	 	}
 	};
 
 	const fetchEchanges = async () => {
@@ -39,6 +39,59 @@ function App() {
 		}
 	}
 
+	async function handleDeleteEchange(id) {
+		const confirmDelete = window.confirm("Étes-vous sûr de vouloir supprimer cet échange ?");
+		if (!confirmDelete) return;
+		
+		try {
+			const response = await fetch(`http://localhost:5000/api/echanges/${id}`, {
+				method: 'DELETE',
+			});
+
+			console.log(response); // Log de la réponse pour voir ce qu'il renvoie
+			if (!response.ok) {
+				throw new Error("Erreur lors de la suppression");
+			}
+
+			setEchanges((prevEchanges) => prevEchanges.filter((e) => e._id !== id));	
+			alert("Échange supprimé avec succès !");
+		} catch (error) {
+			console.error("Erreur lors de la suppression", error);
+			alert("Impossible de supprimer l'échange");
+		}
+	}
+
+	async function handleEditEchange(updatedEchange) {
+		const confirmEdit = window.confirm("Êtes-vous sûr de vouloir modifier cet échange ?");
+		if (!confirmEdit) return;
+		console.log(updatedEchange);
+		try {
+		  	const response = await fetch(`http://localhost:5000/api/echanges/${updatedEchange._id}`, {
+				method: 'PUT',
+				headers: {
+				  'Content-Type': 'application/json',
+				},
+				body: JSON.stringify(updatedEchange), // Envoie les données mises à jour
+			});
+		  
+			console.log(response); // Log de la réponse pour vérifier ce que renvoie le serveur
+			if (!response.ok) {
+				throw new Error("Erreur lors de la modification");
+			}
+		  
+			  	// Met à jour l'état pour afficher les échanges modifiés
+			setEchanges((prevEchanges) =>
+			prevEchanges.map((echange) =>
+				echange._id === updatedEchange._id ? updatedEchange : echange
+			));
+			
+			alert("Échange modifié avec succès !");
+		} 	catch (error) {
+			console.error("Erreur lors de la modification", error);
+			alert("Impossible de modifier l'échange");
+		}
+	  }
+	  
 
 	return (
 		<div>
@@ -48,8 +101,19 @@ function App() {
 			</Banner>
 			<TypeList types={types} />
 			<CreateType fetchTypes={fetchTypes} />
-			<EchangeList  echanges={echanges} />
-			<CreateEchange fetchEchanges={fetchEchanges} types={types} echanges={echanges} />
+
+			<EchangeList
+				echanges={echanges} 
+				types={types} 
+				onDelete={handleDeleteEchange} 
+				onEdit={handleEditEchange}
+			/>
+
+			<CreateEchange 
+				fetchEchanges={fetchEchanges} 
+				types={types} 
+				echanges={echanges} 
+			/>
 		</div>
 	);
 }
