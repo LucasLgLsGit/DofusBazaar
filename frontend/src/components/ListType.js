@@ -1,12 +1,12 @@
 // src/components/UserList.js
 import React from 'react';
-import '../styles/TypeList.css'
+import '../styles/ListType.css'
 
-function TypeList({ types }) {
+function ListType({ types }) {
   return (
     <div>
-      	<h2>Liste des types</h2>
-      	<ul>
+      	<h2 class="listTypeTitre">Liste des types</h2>
+      	<ul class="listTypeUl">
 			{types.map((type) => (
 				<li key={type.id}> {type.name}</li>
 			))}
@@ -15,4 +15,4 @@ function TypeList({ types }) {
   );
 }
 
-export default TypeList;
+export default ListType;

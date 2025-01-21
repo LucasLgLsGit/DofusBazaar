@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import CreateType from './CreateType';
 import CreateEchange from './CreateEchange';
-import TypeList from './TypeList';
-import EchangeList from './EchangeList';
+import ListType from './ListType';
+import ListEchange from './ListEchange';
 import Banner from './Banner';
 
 
@@ -100,11 +100,12 @@ function App() {
 				<h1 className='dbr-title'>DofusBazaar</h1>
 			</Banner>
 			<div>
-				<TypeList types={types} />
 				<CreateType fetchTypes={fetchTypes}  />
+				<ListType types={types} />
+				
 			</div>
 			
-			<EchangeList
+			<ListEchange
 				echanges={echanges} 
 				types={types} 
 				onDelete={handleDeleteEchange} 

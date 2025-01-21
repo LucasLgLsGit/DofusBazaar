@@ -30,15 +30,15 @@ function CreateType({ fetchTypes }) {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      <input
+    <form class="typeForm" onSubmit={handleSubmit}> 
+      <input class="typeInput"
         type="text"
-        placeholder="Nom"
+        placeholder="nouveau type"
         value={name}
         onChange={(e) => setName(e.target.value)}
         required
       />
-      <button type="submit">Ajouter type</button>
+      <button type="submit">+</button>
     </form>
   );
 }

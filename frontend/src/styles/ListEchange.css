@@ -1,0 +1,47 @@
+.listEchangeTitre {
+	background-color: #5D952C;
+	font-weight: normal;
+}
+
+.listEchangeTable {
+	background-color: #B1DE91;
+}
+
+table {
+	width: 100%;
+	border-collapse: collapse; /* Supprime les espaces entre les bordures */
+	margin: 20px 0;
+}
+
+/* Style des bordures */
+table, th, td {
+	border: 1px solid #ccc; /* Couleur de la bordure */
+}
+
+/* Style des en-têtes */
+th {
+	background-color: #B1DE91; /* Couleur principale */
+	font-weight: bold;
+	text-align: left; /* Alignement du texte */
+	padding: 8px;
+}
+
+/* Style des cellules */
+td {
+	padding: 8px; /* Espacement à l'intérieur des cellules */
+	text-align: left; /* Alignement du texte */
+}
+
+/* Alternance des couleurs de ligne */
+tr:nth-child(even) {
+	background-color: #D4EBC4; /* Nuance plus claire de #B1DE91 */
+}
+
+tr:nth-child(odd) {
+	background-color: #ffffff; /* Couleur pour les lignes impaires */
+}
+
+/* Survol des lignes */
+tr:hover {
+	background-color: #e6e6e6; /* Couleur principale au survol */
+}

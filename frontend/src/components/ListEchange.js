@@ -1,9 +1,9 @@
 // src/components/UserList.js
 import React, { useState } from 'react';
 import EditEchange from './EditEchange';
-import '../styles/EchangeList.css'
+import '../styles/ListEchange.css'
 
-function EchangeList({ echanges, types, onDelete, onEdit }) {
+function ListEchange({ echanges, types, onDelete, onEdit }) {
 	const[isModalOpen, setIsModalOpen] = useState(false);
 	const[selectedEchange, setSelectedEchange] = useState(null);
 
@@ -24,8 +24,8 @@ function EchangeList({ echanges, types, onDelete, onEdit }) {
 
 	return (
     	<div>
-      		<h2>Liste des échanges</h2>
-      		<table>
+      		<h2 class="listEchangeTitre">Liste des échanges</h2>
+      		<table class="listEchangeTable">
 				<thead>
 					<tr>
 						<th>num</th>
@@ -64,4 +64,4 @@ function EchangeList({ echanges, types, onDelete, onEdit }) {
   );
 }
 
-export default EchangeList;
+export default ListEchange;
