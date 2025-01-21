@@ -1,6 +1,7 @@
 // src/components/UserList.js
 import React, { useState } from 'react';
 import EditEchange from './EditEchange';
+import '../styles/EchangeList.css'
 
 function EchangeList({ echanges, types, onDelete, onEdit }) {
 	const[isModalOpen, setIsModalOpen] = useState(false);

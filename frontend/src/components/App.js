@@ -99,9 +99,11 @@ function App() {
 				<img src={logo} alt='logo-dofus-bazaar' className='dbr-logo' />
 				<h1 className='dbr-title'>DofusBazaar</h1>
 			</Banner>
-			<TypeList types={types} />
-			<CreateType fetchTypes={fetchTypes} />
-
+			<div>
+				<TypeList types={types} />
+				<CreateType fetchTypes={fetchTypes}  />
+			</div>
+			
 			<EchangeList
 				echanges={echanges} 
 				types={types} 

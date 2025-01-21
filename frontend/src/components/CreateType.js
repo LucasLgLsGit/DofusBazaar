@@ -1,6 +1,6 @@
 // src/components/CreateUser.js
 import React, { useState } from 'react';
-
+import '../styles/CreateType.css'
 function CreateType({ fetchTypes }) {
   const [name, setName] = useState('');
 

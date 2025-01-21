@@ -1,5 +1,6 @@
 // src/components/CreateType.js
 import React, { useState, useEffect } from 'react';
+import '../styles/EchangeList.css'
 
 function CreateType({ fetchEchanges, types , echanges}) {
     const [num, setNum] = useState('');
@@ -50,7 +51,7 @@ function CreateType({ fetchEchanges, types , echanges}) {
     };
 
     return (
-        <form onSubmit={handleSubmit}>
+        <form onSubmit={handleSubmit} >
             <select
                 value={type}
                 onChange={(e) => setType(e.target.value)}

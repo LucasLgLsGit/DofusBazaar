@@ -1,5 +1,6 @@
 // src/components/UserList.js
 import React from 'react';
+import '../styles/TypeList.css'
 
 function TypeList({ types }) {
   return (
