@@ -44,11 +44,9 @@ function ListEchange({ echanges, types, onDelete, onEdit }) {
 						<td>{echange.prix_achat}</td>
 						<td>{echange.prix_estime}</td>
 						<td>*lien image*</td>
-						<td>
-							<div className="buttonsContainer">
-								<button onClick={() => handleEdit(echange)}>Modifier</button>
-								<button onClick={() => onDelete(echange._id)}>Supprimer</button>
-							</div>
+						<td className="listEchangeButtons">
+							<button className="modifyButton" onClick={() => handleEdit(echange)}>Modifier</button>
+							<button className="deleteButton" onClick={() => onDelete(echange._id)}>Supprimer</button>
 						</td>
 					</tr>	
         			))}

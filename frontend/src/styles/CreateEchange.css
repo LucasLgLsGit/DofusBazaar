@@ -4,6 +4,7 @@
 	font-weight: normal;
 	margin: 0;
 	width: 100%;
+	color: black;
 }
 
 .createEchangeForm {
@@ -14,14 +15,28 @@
 
 .createEchangeSelect {
 	font-size: 1.1em;
+	margin: 3.5vh;
+	border: none;
+	border-radius: 5px;
 }
 
 .createEchangeInput {
 	font-size: 1.1em;
 	margin: 3.5vh;
+	border: none;
+	border-radius: 5px;
 }
+
 .createEchangeButton {
 	background-color: var(--validation-button-color);
 	cursor: pointer;
 	font-size: 1.1em;
+	border: none;
+	border-radius: 5px;
+	box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+.createEchangeButton:active {
+	transform: scale(0.98);
+	box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
 }
