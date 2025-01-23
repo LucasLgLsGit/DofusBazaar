@@ -23,16 +23,16 @@ function ListEchange({ echanges, types, onDelete, onEdit }) {
 	}
 
 	return (
-    	<div>
-      		<h2 class="listEchangeTitre">Liste des échanges</h2>
-      		<table class="listEchangeTable">
+    	<div className='listEchangeContainer'>
+      		<h2 className="listEchangeTitre">Liste des échanges</h2>
+      		<table className="listEchangeTable">
 				<thead>
 					<tr>
-						<th>num</th>
-						<th>type</th>
-						<th>prix_achat</th>
-						<th>prix_estime</th>
-						<th></th>
+						<th>Numéro</th>
+						<th>Type</th>
+						<th>Prix d'achat</th>
+						<th>Prix de vente</th>
+						<th>Pièce jointe</th>
 						<th></th>
 					</tr>
 				</thead>
@@ -43,9 +43,12 @@ function ListEchange({ echanges, types, onDelete, onEdit }) {
 						<td>{echange.type.name}</td>
 						<td>{echange.prix_achat}</td>
 						<td>{echange.prix_estime}</td>
+						<td>*lien image*</td>
 						<td>
-							<button onClick={() => handleEdit(echange)}>Modifier</button>
-							<button onClick={() => onDelete(echange._id)}>Supprimer</button>
+							<div className="buttonsContainer">
+								<button onClick={() => handleEdit(echange)}>Modifier</button>
+								<button onClick={() => onDelete(echange._id)}>Supprimer</button>
+							</div>
 						</td>
 					</tr>	
         			))}

@@ -51,9 +51,9 @@ function CreateEchange({ fetchEchanges, types , echanges}) {
 
     return (
         <div>
-            <h2 class="createEchangeTitre">Ajouter un échange</h2>
-            <form class="createEchangeForm" onSubmit={handleSubmit} >
-                <select
+            <h2 className="createEchangeTitre">Ajouter un échange</h2>
+            <form className="createEchangeForm" onSubmit={handleSubmit} >
+                <select className="createEchangeSelect"
                     value={type}
                     onChange={(e) => setType(e.target.value)}
                     required
@@ -65,21 +65,21 @@ function CreateEchange({ fetchEchanges, types , echanges}) {
                         </option>
                     ))}
                 </select>
-                <input
+                <input className="createEchangeInput"
                     type="number"
                     placeholder="Prix d'achat"
                     value={prix_achat}
                     onChange={(e) => setPrixAchat(e.target.value)}
                     required
                 />
-                <input
+                <input className="createEchangeInput"
                     type="number"
                     placeholder="Prix estimé"
                     value={prix_estime}
                     onChange={(e) => setPrixEstime(e.target.value)}
                     required
                 />
-                <button type="submit">Ajouter échange</button>
+                <button className="createEchangeButton" type="submit">Ajouter</button>
             </form>
         </div>
     );

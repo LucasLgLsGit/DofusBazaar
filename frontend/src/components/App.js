@@ -99,24 +99,26 @@ function App() {
 				<img src={logo} alt='logo-dofus-bazaar' className='dbr-logo' />
 				<h1 className='dbr-title'>DofusBazaar</h1>
 			</Banner>
-			<div>
+
+			<div className='types-container'>
 				<CreateType fetchTypes={fetchTypes}  />
 				<ListType types={types} />
 				
 			</div>
 			
-			<ListEchange
-				echanges={echanges} 
-				types={types} 
-				onDelete={handleDeleteEchange} 
-				onEdit={handleEditEchange}
-			/>
-
-			<CreateEchange 
-				fetchEchanges={fetchEchanges} 
-				types={types} 
-				echanges={echanges} 
-			/>
+			<div className='echanges-container'>
+				<CreateEchange 
+					fetchEchanges={fetchEchanges} 
+					types={types} 
+					echanges={echanges} 
+				/>
+				<ListEchange
+					echanges={echanges} 
+					types={types} 
+					onDelete={handleDeleteEchange} 
+					onEdit={handleEditEchange}
+				/>				
+			</div>
 		</div>
 	);
 }

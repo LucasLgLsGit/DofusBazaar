@@ -1,13 +1,30 @@
+:root {
+  --title-background-color     : #5D952C;
+  --container-background-color : #B1DE91;
+  --validation-button-color   : #4cc950;
+  --modify--button-color      : #FFA500;
+  --delete-button-color       : #FF0000;
+}
+
 body {
-  background-color: #ffffff; /* Gris clair très doux pour le fond */
+  background-color: #343434; /* Gris clair très doux pour le fond */
   font-family: 'Arial', sans-serif;
   color: #333; /* Texte plus foncé mais pas trop pour un meilleur contraste */
   margin: 0;
   padding: 0;
 }
 
-
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+.types-container {
+  float: left;
+  width: 20%;
+}
+
+.echanges-container {
+  float: right;
+  width: 78%;
 }

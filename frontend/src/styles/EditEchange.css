@@ -10,43 +10,42 @@
 	justify-content: center;
 	align-items: center;
 	z-index: 1000;
-  }
+}
   
   /* Modal content */
-  .modal form {
+.modal form {
 	background-color: white;
 	padding: 20px;
 	border-radius: 5px;
 	width: 400px;
 	box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-  }
+}
   
   /* Style for input fields */
-  .modal input, .modal select {
+.modal input, .modal select {
 	margin-bottom: 10px;
 	padding: 10px;
 	width: 95%;
 	border: 1px solid #ccc;
 	border-radius: 5px;
-  }
+}
   
 
   /* Style for buttons */
-  .modal button {
+.modal button {
 	padding: 10px 20px;
 	background-color: #007BFF;
 	color: white;
 	border: none;
 	border-radius: 5px;
 	cursor: pointer;
-  }
+}
   
-  .modal button[type="button"] {
+.modal button[type="button"] {
 	background-color: #f44336;
 	margin-left: 10px;
-  }
+}
   
-  .modal button:hover {
+.modal button:hover {
 	opacity: 0.9;
-  }
-  
+}

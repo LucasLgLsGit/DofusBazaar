@@ -1,10 +1,17 @@
+.listEchangeContainer {
+	margin-top: 5vh;
+}
+
 .listEchangeTitre {
-	background-color: #5D952C;
+	background-color: var(--title-background-color);
 	font-weight: normal;
+	text-align: center;
+	margin-bottom: 0;
 }
 
 .listEchangeTable {
-	background-color: #B1DE91;
+	background-color: var(--container-background-color);
+	margin: 0;
 }
 
 table {
@@ -20,7 +27,7 @@ table, th, td {
 
 /* Style des en-têtes */
 th {
-	background-color: #B1DE91; /* Couleur principale */
+	background-color: var(--container-background-color); /* Couleur principale */
 	font-weight: bold;
 	text-align: left; /* Alignement du texte */
 	padding: 8px;
@@ -45,3 +52,12 @@ tr:nth-child(odd) {
 tr:hover {
 	background-color: #e6e6e6; /* Couleur principale au survol */
 }
+
+.buttonsContainer {
+	display: flex;
+	gap: 10px; /* Espacement entre les boutons */
+	justify-content: center; /* Centrer les boutons */
+	position: absolute; /* Sortir du tableau tout en restant dans la cellule */
+	right: 0; /* Aligner les boutons à droite */
+  }
+

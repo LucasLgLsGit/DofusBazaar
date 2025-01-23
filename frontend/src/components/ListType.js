@@ -4,9 +4,9 @@ import '../styles/ListType.css'
 
 function ListType({ types }) {
   return (
-    <div>
-      	<h2 class="listTypeTitre">Liste des types</h2>
-      	<ul class="listTypeUl">
+    <div className="listTypeContainer">
+      	<h2 className="listTypeTitre">Liste des types</h2>
+      	<ul className="listTypeUl">
 			{types.map((type) => (
 				<li key={type.id}> {type.name}</li>
 			))}
