@@ -84,3 +84,8 @@ tr:hover {
 	box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
 }
 
+.modifyButton:hover, .deleteButton:hover {
+	filter: brightness(0.95); /* Assombrit la couleur de 15% */
+	transform: scale(1.05); /* Optionnel : petit effet de zoom */
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Accentue l'ombre */
+}

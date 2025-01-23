@@ -36,6 +36,12 @@
 	box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
 }
 
+.createEchangeButton:hover {
+	filter: brightness(0.95); /* Assombrit la couleur de 15% */
+	transform: scale(1.05); /* Optionnel : petit effet de zoom */
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Accentue l'ombre */
+}
+
 .createEchangeButton:active {
 	transform: scale(0.98);
 	box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);

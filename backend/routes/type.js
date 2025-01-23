@@ -6,4 +6,6 @@ router.get('/', typeControlleur.getTypes);
 
 router.post('/', typeControlleur.createType);
 
+router.delete('/:id', typeControlleur.deleteType);
+
 module.exports = router;

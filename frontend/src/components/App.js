@@ -90,8 +90,29 @@ function App() {
 			console.error("Erreur lors de la modification", error);
 			alert("Impossible de modifier l'échange");
 		}
-	  }
+	}
 	  
+	async function handleDeleteType(id) {
+		const confirmDelete = window.confirm("Étes-vous sûr de vouloir supprimer ce type ?");
+		if (!confirmDelete) return;
+		
+		try {
+			const response = await fetch(`http://localhost:5000/api/types/${id}`, {
+				method: 'DELETE',
+			});
+
+			console.log(response); // Log de la réponse pour voir ce qu'il renvoie
+			if (!response.ok) {
+				throw new Error("Erreur lors de la suppression");
+			}
+
+			setEchanges((prevTypes) => prevTypes.filter((e) => e._id !== id));	
+			alert("Type supprimé avec succès !");
+		} catch (error) {
+			console.error("Erreur lors de la suppression", error);
+			alert("Impossible de supprimer le type");
+		}
+	}
 
 	return (
 		<div>
@@ -102,8 +123,10 @@ function App() {
 
 			<div className='types-container'>
 				<CreateType fetchTypes={fetchTypes}  />
-				<ListType types={types} />
-				
+				<ListType 
+					types={types} 
+					onDelete={handleDeleteType}
+				/>
 			</div>
 			
 			<div className='echanges-container'>
