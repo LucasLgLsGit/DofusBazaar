@@ -103,9 +103,10 @@ Dans une prochaine version du projet, je prévois d'ajouter :
 
 - **Gestion des utilisateurs** : Les utilisateurs pourront créer un compte, se connecter et gérer leurs propres échanges.
 
-#### Détails de la gestion des utilisateurs :
+#### Détails :
 - Cela inclura la possibilité de se connecter avec des identifiants sécurisés.
 - Un tableau de bord pour voir les échanges en cours et passés.
+
 
 - **Gestion des stocks / Inventaire** : Un système d'inventaire permettra de suivre les articles échangés et de gérer les quantités.
 
