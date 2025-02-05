@@ -97,3 +97,23 @@ Développé par Lucas LANGLOIS en 2ème année de BUT Informatique à l'IUT du H
 
 ## Licence
 Ce projet est sous la licence MIT - voir le fichier [LICENSE](./LICENSE) pour plus de détails.
+
+### À venir
+Dans une prochaine version du projet, je prévois d'ajouter :
+
+- **Gestion des utilisateurs** : Les utilisateurs pourront créer un compte, se connecter et gérer leurs propres échanges.
+
+#### Détails de la gestion des utilisateurs :
+- Cela inclura la possibilité de se connecter avec des identifiants sécurisés.
+- Un tableau de bord pour voir les échanges en cours et passés.
+
+- **Gestion des stocks / Inventaire** : Un système d'inventaire permettra de suivre les articles échangés et de gérer les quantités.
+
+#### Détails :
+- La possibilité d'attribuer une valeur à UN ou plusieurs items et la faire fluctuer, évidemment le tout relié aux échanges et modifier la valeur de l'échange.
+
+Le projet sera également hébergé directement sur GitHub, ce qui simplifiera l'accès et permettra d'éviter 
+la nécessité d'un lien URI MongoDB externe pour la gestion des données. 
+Cela offrira une solution pratique pour une utilisation et une gestion centralisées du backend et du frontend.
+
+Ces fonctionnalités permettront de rendre l'outil encore plus complet et adapté à un usage quotidien pour les joueurs de Dofus et autres utilisateurs intéressés.
