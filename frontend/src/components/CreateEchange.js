@@ -1,7 +1,7 @@
-// src/components/CreateType.js
 import React, { useState, useEffect } from 'react';
+import '../styles/CreateEchange.css'
 
-function CreateType({ fetchEchanges, types , echanges}) {
+function CreateEchange({ fetchEchanges, types , echanges}) {
     const [num, setNum] = useState('');
     const [type, setType] = useState('');
     const [prix_achat, setPrixAchat] = useState('');
@@ -50,36 +50,39 @@ function CreateType({ fetchEchanges, types , echanges}) {
     };
 
     return (
-        <form onSubmit={handleSubmit}>
-            <select
-                value={type}
-                onChange={(e) => setType(e.target.value)}
-                required
-            >
-                <option value="">Sélectionnez un type</option>
-                {types.map((typeOption) => (
-                    <option key={typeOption._id} value={typeOption._id}>
-                        {typeOption.name}
-                    </option>
-                ))}
-            </select>
-            <input
-                type="number"
-                placeholder="Prix d'achat"
-                value={prix_achat}
-                onChange={(e) => setPrixAchat(e.target.value)}
-                required
-            />
-            <input
-                type="number"
-                placeholder="Prix estimé"
-                value={prix_estime}
-                onChange={(e) => setPrixEstime(e.target.value)}
-                required
-            />
-            <button type="submit">Ajouter échange</button>
-        </form>
+        <div>
+            <h2 className="createEchangeTitre">Ajouter un échange</h2>
+            <form className="createEchangeForm" onSubmit={handleSubmit} >
+                <select className="createEchangeSelect"
+                    value={type}
+                    onChange={(e) => setType(e.target.value)}
+                    required
+                >
+                    <option value="">Sélectionnez un type</option>
+                    {types.map((typeOption) => (
+                        <option key={typeOption._id} value={typeOption._id}>
+                            {typeOption.name}
+                        </option>
+                    ))}
+                </select>
+                <input className="createEchangeInput"
+                    type="number"
+                    placeholder="Prix d'achat"
+                    value={prix_achat}
+                    onChange={(e) => setPrixAchat(e.target.value)}
+                    required
+                />
+                <input className="createEchangeInput"
+                    type="number"
+                    placeholder="Prix estimé"
+                    value={prix_estime}
+                    onChange={(e) => setPrixEstime(e.target.value)}
+                    required
+                />
+                <button className="createEchangeButton" type="submit">Ajouter</button>
+            </form>
+        </div>
     );
 }
 
-export default CreateType;
+export default CreateEchange;

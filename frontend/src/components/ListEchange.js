@@ -1,8 +1,9 @@
 // src/components/UserList.js
 import React, { useState } from 'react';
 import EditEchange from './EditEchange';
+import '../styles/ListEchange.css'
 
-function EchangeList({ echanges, types, onDelete, onEdit }) {
+function ListEchange({ echanges, types, onDelete, onEdit }) {
 	const[isModalOpen, setIsModalOpen] = useState(false);
 	const[selectedEchange, setSelectedEchange] = useState(null);
 
@@ -22,16 +23,16 @@ function EchangeList({ echanges, types, onDelete, onEdit }) {
 	}
 
 	return (
-    	<div>
-      		<h2>Liste des échanges</h2>
-      		<table>
+    	<div className='listEchangeContainer'>
+      		<h2 className="listEchangeTitre">Liste des échanges</h2>
+      		<table className="listEchangeTable">
 				<thead>
 					<tr>
-						<th>num</th>
-						<th>type</th>
-						<th>prix_achat</th>
-						<th>prix_estime</th>
-						<th></th>
+						<th>Numéro</th>
+						<th>Type</th>
+						<th>Prix d'achat</th>
+						<th>Prix de vente</th>
+						<th>Pièce jointe</th>
 						<th></th>
 					</tr>
 				</thead>
@@ -42,9 +43,10 @@ function EchangeList({ echanges, types, onDelete, onEdit }) {
 						<td>{echange.type.name}</td>
 						<td>{echange.prix_achat}</td>
 						<td>{echange.prix_estime}</td>
-						<td>
-							<button onClick={() => handleEdit(echange)}>Modifier</button>
-							<button onClick={() => onDelete(echange._id)}>Supprimer</button>
+						<td>*lien image*</td>
+						<td className="listEchangeButtons">
+							<button className="modifyButton" onClick={() => handleEdit(echange)}>Modifier</button>
+							<button className="deleteButton" onClick={() => onDelete(echange._id)}>Supprimer</button>
 						</td>
 					</tr>	
         			))}
@@ -63,4 +65,4 @@ function EchangeList({ echanges, types, onDelete, onEdit }) {
   );
 }
 
-export default EchangeList;
+export default ListEchange;

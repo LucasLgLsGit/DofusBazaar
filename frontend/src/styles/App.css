@@ -1,4 +1,6 @@
 .dbr-layout-inner {
 	display: flex;
 	flex-direction: row;
-}
+	width: 100%; /* Assure-toi que le conteneur prend toute la largeur */
+	background-color: #f0f0f0; /* Fond gris pour toute la page */
+  }

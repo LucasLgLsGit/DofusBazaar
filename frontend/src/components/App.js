@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import CreateType from './CreateType';
 import CreateEchange from './CreateEchange';
-import TypeList from './TypeList';
-import EchangeList from './EchangeList';
+import ListType from './ListType';
+import ListEchange from './ListEchange';
 import Banner from './Banner';
 
 
@@ -90,8 +90,29 @@ function App() {
 			console.error("Erreur lors de la modification", error);
 			alert("Impossible de modifier l'échange");
 		}
-	  }
+	}
 	  
+	async function handleDeleteType(id) {
+		const confirmDelete = window.confirm("Étes-vous sûr de vouloir supprimer ce type ?");
+		if (!confirmDelete) return;
+		
+		try {
+			const response = await fetch(`http://localhost:5000/api/types/${id}`, {
+				method: 'DELETE',
+			});
+
+			console.log(response); // Log de la réponse pour voir ce qu'il renvoie
+			if (!response.ok) {
+				throw new Error("Erreur lors de la suppression");
+			}
+
+			setTypes((prevTypes) => prevTypes.filter((e) => e._id !== id));	
+			alert("Type supprimé avec succès !");
+		} catch (error) {
+			console.error("Erreur lors de la suppression", error);
+			alert("Impossible de supprimer le type");
+		}
+	}
 
 	return (
 		<div>
@@ -99,21 +120,28 @@ function App() {
 				<img src={logo} alt='logo-dofus-bazaar' className='dbr-logo' />
 				<h1 className='dbr-title'>DofusBazaar</h1>
 			</Banner>
-			<TypeList types={types} />
-			<CreateType fetchTypes={fetchTypes} />
 
-			<EchangeList
-				echanges={echanges} 
-				types={types} 
-				onDelete={handleDeleteEchange} 
-				onEdit={handleEditEchange}
-			/>
-
-			<CreateEchange 
-				fetchEchanges={fetchEchanges} 
-				types={types} 
-				echanges={echanges} 
-			/>
+			<div className='types-container'>
+				<CreateType fetchTypes={fetchTypes}  />
+				<ListType 
+					types={types} 
+					onDelete={handleDeleteType}
+				/>
+			</div>
+			
+			<div className='echanges-container'>
+				<CreateEchange 
+					fetchEchanges={fetchEchanges} 
+					types={types} 
+					echanges={echanges} 
+				/>
+				<ListEchange
+					echanges={echanges} 
+					types={types} 
+					onDelete={handleDeleteEchange} 
+					onEdit={handleEditEchange}
+				/>				
+			</div>
 		</div>
 	);
 }

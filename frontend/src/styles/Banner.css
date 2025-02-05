@@ -1,19 +1,21 @@
 .dbr-banner {
+	background-color: var(--title-background-color);
 	color: black;
-	text-align: right;
-	padding: 32px;
-	border-bottom: solid 3px black;
+	padding-left: 1%;
 	display: flex;
-	justify-content: flex-end;
 	flex-direction: row;
 	align-items: center;
+	margin: 1%;
+	border-radius: 5px;
 }
 
 .dbr-title {
-	padding-left: 32px;
+	padding-left: 1%;	
+	font-size: 1.7em;
+	font-weight: normal;
 }
 
 .dbr-logo {
-	height: 70px;
-	width: 70px;
+	height: 2.5%;
+	width: 2.5%;
 }

@@ -1,0 +1,93 @@
+.listEchangeContainer {
+	margin-top: 5vh;
+}
+
+.listEchangeTitre {
+	background-color: var(--title-background-color);
+	font-weight: normal;
+	text-align: center;
+	margin-bottom: 0;
+	color: black;
+	margin-right: 1%;
+	border-radius: 5px 5px 0px 0px;
+}
+
+.listEchangeTable {
+	background-color: var(--container-background-color);
+	margin-top: 0;
+}
+
+table {
+	width: 99%;
+	border-collapse: collapse; /* Supprime les espaces entre les bordures */
+	border-radius: 0px 0px 5px 5px;
+}
+
+/* Style des bordures */
+table, th, td {
+	border: 1px solid #ccc; /* Couleur de la bordure */
+}
+
+/* Style des en-têtes */
+th {
+	background-color: var(--container-background-color); /* Couleur principale */
+	font-weight: bold;
+	text-align: left; /* Alignement du texte */
+	padding: 8px;
+}
+
+/* Style des cellules */
+td {
+	padding: 8px; /* Espacement à l'intérieur des cellules */
+	text-align: left; /* Alignement du texte */
+}
+
+/* Alternance des couleurs de ligne */
+tr:nth-child(even) {
+	background-color: #e6e6e6; /* Nuance plus claire de #B1DE91 */
+}
+
+tr:nth-child(odd) {
+	background-color: #ffffff; /* Couleur pour les lignes impaires */
+}
+
+/* Survol des lignes */
+tr:hover {
+	background-color: #D4EBC4; /* Couleur principale au survol */
+}
+
+.listEchangeButtons {
+    text-align: center; /* Centrer les boutons dans la cellule */
+    background: transparent; /* Rendre le fond transparent pour éviter le style de tableau */
+    border: none; /* Supprimer les bordures du tableau si nécessaire */
+}
+
+.modifyButton {
+	margin-right: 20%;
+	background-color: var(--modify-button-color);
+	cursor: pointer;
+	font-size: 1em;
+	border: none;
+	border-radius: 5px;
+	box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+.deleteButton {
+	background-color: var(--delete-button-color);
+	cursor: pointer;
+	font-size: 1em;
+	border: none;
+	border-radius: 5px;
+	box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+.modifyButton:active, .deleteButton:active {
+	transform: scale(0.98);
+	box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+.modifyButton:hover, .deleteButton:hover {
+	filter: brightness(0.95); /* Assombrit la couleur de 15% */
+	transform: scale(1.05); /* Optionnel : petit effet de zoom */
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Accentue l'ombre */
+}

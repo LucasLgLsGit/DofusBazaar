@@ -1,13 +1,30 @@
+:root {
+  --title-background-color     : #5D952C;
+  --container-background-color : #B1DE91;
+  --validation-button-color   : #4cc950;
+  --modify-button-color      : #FFA500;
+  --delete-button-color       : #FF0000;
+}
+
 body {
+  background-color: #343434; /* Gris clair très doux pour le fond */
+  font-family: 'Arial', sans-serif;
+  color: #333; /* Texte plus foncé mais pas trop pour un meilleur contraste */
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+.types-container {
+  float: left;
+  width: 20%;
+}
+
+.echanges-container {
+  float: right;
+  width: 78%;
 }
