@@ -8,7 +8,7 @@ et je n'arrivais pas à garder le fil car j'en faisais beaucoup, et je ne voulai
 
 Il inclut un backend (Node.js avec MongoDB) et un frontend en React.
 
-PS : Un nouveau projet m'est venu en tête qui peut compléter celui ci, l'ajout d'image comme "preuve d'achat" ne fonctionne pas encore pour cette raison.
+PS : Un nouveau projet m'est venu en tête qui peut compléter celui ci, l'ajout d'image comme "Pièce jointe" ne fonctionne pas encore pour cette raison.
 
 ## Prérequis
 
