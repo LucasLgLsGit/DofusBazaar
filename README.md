@@ -40,7 +40,7 @@ Installez les dépendances pour le backend et le frontend en exécutant les comm
 Configuration de l'environnement
 Dans le dossier backend, créez un fichier .env à la racine et ajoutez les variables d'environnement nécessaires. Par exemple :
    ```sh
-   .env
+   #.env
 
    # URI de connexion à MongoDB (utilise le lien fourni par MongoDB Atlas ou ton cluster local)
    MONGO_URI=votre_uri_mongodb
