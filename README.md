@@ -94,3 +94,6 @@ frontend/ : Contient l'application React pour l'interface utilisateur.
 package.json : Fichier de configuration principal pour les scripts et les dépendances.
 
 Développé par Lucas LANGLOIS en 2ème année de BUT Informatique à l'IUT du Havre
+
+## Licence
+Ce projet est sous la licence MIT - voir le fichier [LICENSE](./LICENSE) pour plus de détails.
