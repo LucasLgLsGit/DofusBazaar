@@ -102,16 +102,16 @@ Ce projet est sous la licence MIT - voir le fichier [LICENSE](./LICENSE) pour pl
 Dans une prochaine version du projet, je prévois d'ajouter :
 
 - **Gestion des utilisateurs** : Les utilisateurs pourront créer un compte, se connecter et gérer leurs propres échanges.
-
-#### Détails :
-- Cela inclura la possibilité de se connecter avec des identifiants sécurisés.
-- Un tableau de bord pour voir les échanges en cours et passés.
-
+  
+  #### Détails de la gestion des utilisateurs :
+  - Cela inclura la possibilité de se connecter avec des identifiants sécurisés.
+  - Un tableau de bord pour voir les échanges en cours et passés.
 
 - **Gestion des stocks / Inventaire** : Un système d'inventaire permettra de suivre les articles échangés et de gérer les quantités.
-
-#### Détails :
-- La possibilité d'attribuer une valeur à UN ou plusieurs items et la faire fluctuer, évidemment le tout relié aux échanges et modifier la valeur de l'échange.
+  
+  #### Détails de la gestion des stocks :
+  - La possibilité d'attribuer une valeur à UN ou plusieurs items et la faire fluctuer.
+  - Relier cette valeur aux échanges, ce qui permettra de modifier automatiquement la valeur de l'échange en fonction des variations.
 
 Le projet sera également hébergé directement sur GitHub, ce qui simplifiera l'accès et permettra d'éviter 
 la nécessité d'un lien URI MongoDB externe pour la gestion des données. 
