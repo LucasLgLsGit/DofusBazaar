@@ -23,8 +23,7 @@ Avant de commencer, assurez-vous d'avoir **Node.js** et **npm** installés sur v
 1. Ouvrez un terminal et naviguez jusqu'au dossier où vous souhaitez cloner le projet.
 2. Clonez le dépôt avec la commande suivante :
    ```sh
-   git clone https://github.com/votre-utilisateur/DofusBazaar.git
-
+   git clone https://github.com/LucasLgLsGit/DofusBazaar.git
 3. Accédez au dossier du projet :
 
    ```sh
