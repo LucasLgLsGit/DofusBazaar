@@ -72,10 +72,14 @@ Ouvrez votre navigateur et accédez à http://localhost:3000 pour utiliser l'app
 ### Petit tutoriel
 ![image](https://github.com/user-attachments/assets/8cef65e4-90e3-46cc-82d5-ece9cfec3e63)
 
-Ci-dessus une capture d'écran en tant qu'exemple.
+Ci-dessus une capture d'écran du site qui servira d'exemple.
+
 Le site est divisé en deux colonnes, celle de gauche pour les types, et celle de droite pour les échanges (qui ont eux même besoin des types).
+
 On commence par créer un type (la liste se mettra à jour).
+
 On peut maintenant créer un échange en remplissant les différents champs tel que le type, le prix d'achat et de revente.
+
 Le tableau des échanges se mettra à jour avec vos informations et vous pourrez le supprimer ou bien le modifier
 
 ### Structure du projet
