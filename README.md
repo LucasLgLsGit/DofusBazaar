@@ -2,9 +2,13 @@
 
 ## Description
 DofusBazaar est un projet de gestion d'échanges, inspiré de l'univers du jeu Dofus, on peut créer des types, des échanges, les modifier et les supprimer. 
+
 J'ai réalisé ce projet dans le premier but de m'améliorer en JavaScript, et aussi dans le but de m'aider, car c'est avant tout un outil, je faisais énormément de commerce sur ce jeu 
-et je n'arrivais pas à garder le fil car j'en faisais beaucoup, et je ne voulais pas entretenir un tableau Excell avec énormément de lignes, donc j'ai développé cet outil utile, pour moi avant tout, mais qui peut l'être pour d'autres aussi.
+et je n'arrivais pas à garder le fil car j'en faisais beaucoup, et je ne voulais pas entretenir un tableau Excell avec énormément de lignes. Donc j'ai développé cet outil utile, pour moi avant tout, mais qui peut l'être pour d'autres aussi.
+
 Il inclut un backend (Node.js avec MongoDB) et un frontend en React.
+
+PS : Un nouveau projet m'est venu en tête qui peut compléter celui ci, l'ajout d'image comme "preuve d'achat" ne fonctionne pas encore pour cette raison.
 
 ## Prérequis
 
