@@ -1,7 +1,8 @@
 # DofusBazaar
 
 ## Description
-DofusBazaar est un projet d'échange de ressources, inspiré de l'univers du jeu Dofus. Il inclut un backend (Node.js avec MongoDB) et un frontend en React.
+DofusBazaar est un projet de gestion d'échanges, inspiré de l'univers du jeu Dofus, on peut créer des types, des échanges, les modifier et les supprimer. 
+Il inclut un backend (Node.js avec MongoDB) et un frontend en React.
 
 ## Prérequis
 
