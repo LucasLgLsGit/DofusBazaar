@@ -106,7 +106,7 @@ function App() {
 				throw new Error("Erreur lors de la suppression");
 			}
 
-			setEchanges((prevTypes) => prevTypes.filter((e) => e._id !== id));	
+			setTypes((prevTypes) => prevTypes.filter((e) => e._id !== id));	
 			alert("Type supprimé avec succès !");
 		} catch (error) {
 			console.error("Erreur lors de la suppression", error);

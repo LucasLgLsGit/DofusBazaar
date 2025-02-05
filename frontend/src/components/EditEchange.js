@@ -40,7 +40,7 @@ function EditEchange({ echange, types, onClose, onSubmit }) {
       <div className="modal">
          <form onSubmit={handleSubmit}>
             <label>
-               Num: 
+               Numéro de l'échange : 
             </label>
             <p>
                {formData.num} 
